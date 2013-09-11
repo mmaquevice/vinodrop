@@ -1,21 +1,26 @@
 @(message: String)
 
-<!doctype html>
-<html ng-app>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-  	<title>Jumbotron Template for Bootstrap</title>  	
-  	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/bootstrap.min.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">   
-    
+    <link rel="shortcut icon" href="@routes.Assets.at("images/favicon.png")">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="@routes.Assets.at("stylesheets/bootstrap/bootstrap.css")" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <link href="@routes.Assets.at("stylesheets/main.css")" rel="stylesheet">
+   
   </head>
-  <body>    
+
+  <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -55,8 +60,8 @@
           </form>
         </div><!--/.navbar-collapse -->
       </div>
-    </div>    
-    
+    </div>
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -92,12 +97,14 @@
         <p>&copy; Company 2013</p>
       </footer>
     </div> <!-- /container -->
-    
-    
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="@routes.Assets.at("stylesheets/javascripts/bootstrap/bootstrap.min.js")"></script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="@routes.Assets.at("stylesheets/javascripts/jquery-1.9.0.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap/bootstrap.js")"></script>
   </body>
 </html>
