@@ -4,14 +4,16 @@ import java.util.List;
 
 import models.World;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import play.*;
+import play.Logger;
 import play.Logger.ALogger;
-import play.mvc.*;
+import play.mvc.Controller;
+import play.mvc.Result;
 import services.GalaxyService;
-import views.html.*;
+import services.UserService;
+import views.html.index;
+import views.html.login;
 
 @org.springframework.stereotype.Controller
 public class Application extends Controller {
@@ -20,6 +22,9 @@ public class Application extends Controller {
 
 	@Autowired
 	GalaxyService galaxyService;
+
+	@Autowired
+	UserService userService;
 
 	public Result index() {
 		if (galaxyService.getNumberOfWorlds() == 0) {
@@ -33,6 +38,14 @@ public class Application extends Controller {
 
 		log.info("toto");
 
+		if (userService.getNumberOfUsers() == 0) {
+			userService.makeSomeUsers();
+		}
+
 		return ok(index.render("Your new application is ready."));
+	}
+
+	public Result login() {
+		return ok(login.render());
 	}
 }
