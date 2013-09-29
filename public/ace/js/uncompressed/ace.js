@@ -15,6 +15,7 @@ jQuery(function($) {
 	ace.widget_boxes(jQuery);
 	ace.widget_reload_handler(jQuery);//this is for demo only, you can remove and have your own function, please see examples/widget.html
 
+	ace.settings.main_container_fixed(this.checked);
 	/**
 	//make sidebar scrollbar when it is fixed and some parts of it is out of view
 	//>> you should include jquery-ui and slimscroll javascript files in your file
