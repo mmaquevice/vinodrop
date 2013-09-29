@@ -42,9 +42,10 @@ public class UserService {
 		return userRepository.save(new User(name, email, password));
 	}
 
-	private Boolean authenticate(String email, String password) {
+	public Boolean authenticate(String email, String password) {
 		User user = userRepository.findByPropertyValue("email", email);
-		if (user.email.equals(password)) {
+
+		if ((user != null) && user.password.equals(password)) {
 			return Boolean.TRUE;
 		}
 		else {

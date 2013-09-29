@@ -1,19 +1,25 @@
 package controllers;
 
+import static play.data.Form.form;
+
 import java.util.List;
 
+import models.Login;
 import models.World;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import play.Logger;
 import play.Logger.ALogger;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.GalaxyService;
 import services.UserService;
 import views.html.index;
 import views.html.login;
+import play.data.*;
+import static play.data.Form.*;
 
 @org.springframework.stereotype.Controller
 public class Application extends Controller {
@@ -46,6 +52,17 @@ public class Application extends Controller {
 	}
 
 	public Result login() {
-		return ok(login.render());
+		return ok(login.render(form(Login.class)));
 	}
+
+	public Result authenticate() {
+		Form<Login> loginForm = form(Login.class).bindFromRequest();
+
+		if (userService.authenticate(loginForm.get().email, loginForm.get().password)) {
+			return ok();
+		}
+
+		return ok();
+	}
+
 }

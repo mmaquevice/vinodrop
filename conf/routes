@@ -3,7 +3,9 @@
 # ~~~~
 
 # Home page
-GET     /		               	 	@controllers.Application.login()
+GET     /		                  	@controllers.Application.login()
+GET     /login                  	@controllers.Application.login()
+POST    /login                      @controllers.Application.authenticate()
 GET     /index                      @controllers.Application.index()
 
 
