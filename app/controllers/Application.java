@@ -18,6 +18,7 @@ import services.GalaxyService;
 import services.UserService;
 import views.html.index;
 import views.html.login;
+import views.html.*;
 import play.data.*;
 import static play.data.Form.*;
 
@@ -59,7 +60,7 @@ public class Application extends Controller {
 		Form<Login> loginForm = form(Login.class).bindFromRequest();
 
 		if (userService.authenticate(loginForm.get().email, loginForm.get().password)) {
-			return ok();
+			return ok(board.render());
 		}
 
 		return ok();
