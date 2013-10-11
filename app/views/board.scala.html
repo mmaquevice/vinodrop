@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Dashboard - Ace Admin</title>
-		@importheader()
+
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		@importcss()
+		
 	</head>
 
 	<body>
-		@navbar()
+	
+		@header()
 
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
@@ -18,11 +24,32 @@
 				<a class="menu-toggler" id="menu-toggler" href="#">
 					<span class="menu-text"></span>
 				</a>
-
+                
 				@sidebar()
-
+               				
 				<div class="main-content">
-					@breadcrumbs()
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+							<li class="active">Dashboard</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
 
 					<div class="page-content">
 						<div class="page-header">
@@ -30,7 +57,7 @@
 								Dashboard
 								<small>
 									<i class="icon-double-angle-right"></i>
-									all about your wines
+									overview &amp; stats
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -45,44 +72,34 @@
 									</button>
 
 									<i class="icon-ok green"></i>
+
 									Welcome to
 									<strong class="green">
-										Vinodrop !
+										Ace
+										<small>(v1.2)</small>
 									</strong>
+									,
+	the lightweight, feature-rich and easy to use admin template.
 								</div>
 
-								<div class="row">
-									<div class="space-6"></div>
-
-									<div class="col-sm-7 infobox-container">
-
-										<div class="space-6"></div>
-
-										<div class="infobox infobox-grey infobox-small infobox-dark">
-											<div class="infobox-icon">
-												<i class="icon-download-alt"></i>
-											</div>
-
-											<div class="infobox-data">
-												<div class="infobox-content">Downloads</div>
-												<div class="infobox-content">1,269</div>
-											</div>
-										</div>
-									</div>
-									
-								</div><!-- /row -->
-
-								<div class="hr hr32 hr-dotted"></div>
-								
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
-				</div><!-- /.main-content -->				
+				</div><!-- /.main-content -->
+
 			</div><!-- /.main-container-inner -->
 
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
 		</div><!-- /.main-container -->
 
 		@importjavascript()
+
+		<!-- inline scripts related to this page -->
+
+		<script type="text/javascript">
+		</script>
 	</body>
 </html>
