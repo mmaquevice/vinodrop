@@ -376,6 +376,8 @@ jQuery(function() {
 (function($ , undefined) {
 	$.fn.ace_spinner = function(options) {
 		
+		
+		
 		//when min is negative, the input maxlength does not account for the extra minus sign
 		this.each(function() {
 			var icon_up = options.icon_up || 'icon-chevron-up'

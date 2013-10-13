@@ -6,6 +6,7 @@
 GET     /		                  	@controllers.Application.login()
 GET     /login                  	@controllers.Application.login()
 POST    /login                      @controllers.Application.authenticate()
+POST    /addWine                    @controllers.Application.addWine()
 GET     /index                      @controllers.Application.index()
 
 

@@ -5,6 +5,7 @@ import static play.data.Form.form;
 import java.util.List;
 
 import models.Login;
+import models.WineBottle;
 import models.World;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,6 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import services.GalaxyService;
 import services.UserService;
-import views.html.index;
-import views.html.login;
 import views.html.*;
 import play.data.*;
 import static play.data.Form.*;
@@ -60,10 +59,18 @@ public class Application extends Controller {
 		Form<Login> loginForm = form(Login.class).bindFromRequest();
 
 		if (userService.authenticate(loginForm.get().email, loginForm.get().password)) {
-			return ok(board.render());
+			return ok(board.render(form(WineBottle.class)));
 		}
 
 		return ok();
 	}
+	
+	public Result addWine() {
+		Form<WineBottle> wineForm = form(WineBottle.class).bindFromRequest();
+		System.out.println(wineForm.get());
+		return ok(board.render(form(WineBottle.class)));
+	}
+	
+	
 
 }
