@@ -16,7 +16,11 @@ public class Appellation {
 	public SubRegion subRegion;
 
 	@RelatedTo(type = "LOCATED_IN")
-	public Region region;
+	public Region region;	
+
+	public Appellation() {
+		super();
+	}
 
 	public Appellation(String name) {
 		super();

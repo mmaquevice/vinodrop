@@ -9,6 +9,8 @@ public class SubRegion {
 
 	@GraphId
 	public Long id;
+	
+	public String name;
 
 	@RelatedTo(type = "LOCATED_IN")
 	public Region region;

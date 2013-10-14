@@ -8,5 +8,7 @@ public class Region {
 
 	@GraphId
 	public Long id;
+	
+	public String name;
 
 }
